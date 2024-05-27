@@ -7,13 +7,13 @@ static const int WIN_HEIGHT = 600;
 /* colors and font can be overwritten via X resource properties.
  * See nsxiv(1), X(7) section Resources and xrdb(1) for more information.
  *                                      X resource            value (NULL == default) */
-static const char *WIN_BG[]   = { "Nsxiv.window.background",   "white" };
-static const char *WIN_FG[]   = { "Nsxiv.window.foreground",   "black" };
+static const char *WIN_BG[]   = { "Nsxiv.window.background",   "#282828" };
+static const char *WIN_FG[]   = { "Nsxiv.window.foreground",   "#d4be98" };
 static const char *MARK_FG[]  = { "Nsxiv.mark.foreground",      NULL };
 #if HAVE_LIBFONTS
-static const char *BAR_BG[]   = { "Nsxiv.bar.background",       NULL };
-static const char *BAR_FG[]   = { "Nsxiv.bar.foreground",       NULL };
-static const char *BAR_FONT[] = { "Nsxiv.bar.font",            "monospace-8" };
+static const char *BAR_BG[]   = { "Nsxiv.bar.background",       "#a9b665" };
+static const char *BAR_FG[]   = { "Nsxiv.bar.foreground",       "#282828" };
+static const char *BAR_FONT[] = { "Nsxiv.bar.font",            "LiberationMono-Bold-10" };
 
 /* if true, statusbar appears on top of the window */
 static const bool TOP_STATUSBAR = false;
@@ -68,7 +68,7 @@ static const bool ANTI_ALIAS = true;
 /* if true, use a checkerboard background for alpha layer,
  * toggled with 'A' key binding (overwritten via `--alpha-layer` option)
  */
-static const bool ALPHA_LAYER = false;
+static const bool ALPHA_LAYER = true;
 
 #endif
 #ifdef INCLUDE_THUMBS_CONFIG
@@ -96,7 +96,7 @@ static const keymap_t keys[] = {
 	{ 0,            XK_Return,        g_switch_mode,        None },
 	{ 0,            XK_f,             g_toggle_fullscreen,  None },
 	{ 0,            XK_b,             g_toggle_bar,         None },
-	{ ControlMask,  XK_x,             g_prefix_external,    None },
+	{ 0,		XK_x,             g_prefix_external,    None },
 	{ 0,            XK_g,             g_first,              None },
 	{ 0,            XK_G,             g_n_or_last,          None },
 	{ 0,            XK_r,             g_reload_image,       None },
