@@ -92,6 +92,7 @@ install: all
 	mkdir -p $(DESTDIR)$(EGPREFIX)
 	cp etc/examples/* $(DESTDIR)$(EGPREFIX)
 	chmod 755 $(DESTDIR)$(EGPREFIX)/*
+	rm -rf config.h
 
 uninstall: uninstall-icon
 	@echo "REMOVE bin/nsxiv"
